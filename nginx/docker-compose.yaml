@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  nginx-backed-1:
+    image: nginx-backed-1
+    container_name: nginx-backed-1
+    build: .
+    restart: always
+    environment:
+      PORT: 3000
+    ports:
+    - 3000:3000
+  nginx-backed-2:
+    image: nginx-backed-2
+    container_name: nginx-backed-2
+    build: .
+    restart: always
+    environment:
+      PORT: 3001
+    ports:
+      - 3001:3001
+  nginx-backed-3:
+    image: nginx-backed-3
+    container_name: nginx-backed-3
+    build: .
+    restart: always
+    environment:
+      PORT: 3002
+    ports:
+      - 3002:3002
+
